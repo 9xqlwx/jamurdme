@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jamurdme ⭑ Calculadora Valores</title>
     <link rel="icon" type="image/png" href="https://i.imgur.com/JeosTRH.png">
+    
+    <meta property="og:title" content="Jamurdme ⭑ Calculadora Valores">
+    <meta property="og:description" content="Calcula los valores de juegos de Roblox a USD, Robux y Robux + tax de forma rápida y sencilla.">
+    <meta property="og:image" content="https://i.imgur.com/0DgUzRI.png">
+    <meta property="og:url" content="https://9xqlwx.github.io/jamurdme/">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FFFFFF">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -26,6 +34,8 @@
             align-items: center;
             min-height: 100vh;
             color: var(--text-color);
+            /* Nuevo: Espacio en los bordes para móviles */
+            padding: 1rem; 
         }
         .container {
             background: var(--container-bg);
@@ -147,6 +157,13 @@
             margin-top: 1rem;
             font-size: 0.8rem;
             color: #999;
+        }
+        
+        /* Nuevo: Ajuste para pantallas pequeñas */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
