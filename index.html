@@ -14,7 +14,6 @@
             --text-color: #f0f0f0;
             --input-bg: #444444;
             --primary-color: #5165f6;
-            --icon-color: #aaaaaa;
             --shadow-light: rgba(0, 0, 0, 0.2);
             --shadow-dark: rgba(0, 0, 0, 0.5);
         }
@@ -52,6 +51,10 @@
             justify-content: center;
             gap: 0.75rem;
         }
+        h2 .icon {
+            width: 24px;
+            height: 24px;
+        }
         .input-group {
             position: relative;
             margin-bottom: 1rem;
@@ -59,6 +62,7 @@
         select, input {
             width: 100%;
             padding: 0.75rem 1rem;
+            padding-left: 2.5rem;
             margin: 0.5rem 0;
             border-radius: 0.75rem;
             border: 1px solid #555555;
@@ -72,6 +76,20 @@
             border-color: var(--primary-color);
             box-shadow: 0 0 0 0.25rem rgba(81, 101, 246, 0.25);
         }
+        .icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+        }
         button {
             width: 100%;
             padding: 0.75rem;
@@ -81,6 +99,10 @@
             cursor: pointer;
             font-weight: 600;
             transition: transform 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
         button:hover {
             transform: translateY(-2px);
@@ -111,6 +133,15 @@
             padding: 1rem;
             border-radius: 1rem;
             box-shadow: 0 0.25rem 0.5rem var(--shadow-light);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.75rem;
+        }
+        .card-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
         }
         .note {
             margin-top: 1rem;
@@ -121,9 +152,10 @@
 </head>
 <body>
 <div class="container">
-    <h2>Jamurdme ⭑ Calculadora</h2>
+    <h2><img src="https://i.imgur.com/t6Jm7ev.png" alt="Icono de calculadora" class="icon"> Jamurdme ⭑ Calculadora</h2>
     
     <div class="input-group">
+        <span class="input-icon"><img src="https://i.imgur.com/poqMuuT.png" alt="Icono de juegos" class="icon"></span>
         <select id="game" onchange="updatePlaceholder()">
             <option value="JAILBREAK">JAILBREAK</option>
             <option value="ADOPT ME">ADOPT ME</option>
@@ -134,11 +166,12 @@
     </div>
 
     <div class="input-group">
+        <span class="input-icon"><img src="https://i.imgur.com/8lGLKPM.png" alt="Icono de monedas" class="icon"></span>
         <input type="text" id="amount" placeholder="Cantidad (ejemplo: 50,000,000)">
     </div>
 
-    <button class="calculate-button" onclick="calculate()">Calcular</button>
-    <button class="discord-button" onclick="goDiscord()">Discord</button>
+    <button class="calculate-button" onclick="calculate()"><img src="https://i.imgur.com/xJpNLiJ.png" alt="Icono de calcular" class="icon">Calcular</button>
+    <button class="discord-button" onclick="goDiscord()"><img src="https://i.imgur.com/SJ0ijg3.png" alt="Icono de Discord" class="icon">Discord</button>
     
     <div class="result-grid" id="result"></div>
 </div>
@@ -193,9 +226,9 @@
         }
 
         document.getElementById("result").innerHTML = `
-            <div class="card"><strong>USD:</strong> $${usd.toFixed(2)}</div>
-            <div class="card"><strong>Robux:</strong> ${robux.toFixed(0)}</div>
-            <div class="card"><strong>Robux + tax:</strong> ${robuxPlusTax.toFixed(0)}</div>
+            <div class="card"><img src="https://i.imgur.com/icd7syt.png" alt="Icono de dólar" class="card-icon"> <strong>USD:</strong> $${usd.toFixed(2)}</div>
+            <div class="card"><img src="https://i.imgur.com/icd7syt.png" alt="Icono de gema" class="card-icon"> <strong>Robux:</strong> ${robux.toFixed(0)}</div>
+            <div class="card"><img src="https://i.imgur.com/7NRBABs.png" alt="Icono de impuesto" class="card-icon"> <strong>Robux + tax:</strong> ${robuxPlusTax.toFixed(0)}</div>
             <div class="note">El valor también puede variar por la demanda!</div>
         `;
     }
